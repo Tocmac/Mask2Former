@@ -17,6 +17,11 @@ python demo.py --config-file ../configs/coco/panoptic-segmentation/maskformer2_R
   --input input1.jpg input2.jpg \
   [--other-options]
   --opts MODEL.WEIGHTS /path/to/checkpoint_file
+
+python demo/demo.py --config-file configs/coco/instance-segmentation/maskformer2_R50_bs16_50ep.yaml --input /data/home/hjx/datasets/LSCD/coco_style_oneclass/images/val2017/3162.jpg --opts MODEL.WEIGHTS checkpoints/model_final_3c8ec9.pkl --output output/
+
+python demo/demo.py --config-file configs/coco/instance-segmentation/maskformer2_R50_bs16_50ep.yaml --input input/000000.jpg --opts MODEL.WEIGHTS checkpoints/model_final_3c8ec9.pkl --output output/
+
 ```
 The configs are made for training, therefore we need to specify `MODEL.WEIGHTS` to a model from model zoo for evaluation.
 This command will run the inference and show visualizations in an OpenCV window.
